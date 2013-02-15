@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<configuration>
+  <appSettings>
+    <add key="Debug" value="{Debug}"/>
+    <add key="SiteUrl" value="http://{Server.Name}"/>
+  </appSettings>
+  <connectionStrings>
+    <add name="PIOLEDB" connectionString="Provider=PIOLEDB;Data Source={Pi.Server};User Id={Pi.User};Password={Pi.Password}"/>
+  </connectionStrings>
+</configuration>

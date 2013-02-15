@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeploymentHelper.Core", "DeploymentHelper.Core\DeploymentHelper.Core.csproj", "{3E804C6C-4E8B-4934-8120-AFD6E9ACCDD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeploymentHelper.Tests", "DeploymentHelper.Tests\DeploymentHelper.Tests.csproj", "{50D50CAA-2186-408C-92EE-3E3166D8FFDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DeploymentHelper.Console", "DeploymentHelper.Console\DeploymentHelper.Console.csproj", "{22E8D2C3-35F5-44FD-B738-1B37116A921A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E804C6C-4E8B-4934-8120-AFD6E9ACCDD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E804C6C-4E8B-4934-8120-AFD6E9ACCDD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E804C6C-4E8B-4934-8120-AFD6E9ACCDD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E804C6C-4E8B-4934-8120-AFD6E9ACCDD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50D50CAA-2186-408C-92EE-3E3166D8FFDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50D50CAA-2186-408C-92EE-3E3166D8FFDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50D50CAA-2186-408C-92EE-3E3166D8FFDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50D50CAA-2186-408C-92EE-3E3166D8FFDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E8D2C3-35F5-44FD-B738-1B37116A921A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E8D2C3-35F5-44FD-B738-1B37116A921A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E8D2C3-35F5-44FD-B738-1B37116A921A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E8D2C3-35F5-44FD-B738-1B37116A921A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

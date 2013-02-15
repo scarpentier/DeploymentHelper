@@ -4,7 +4,7 @@ Replaces strings in your app configuration file(s) with data read from an Excel 
 It makes deployment of applications easier by avoiding the modification of multiple (and often complex) configuration files.
 
 ## Usage
-DeploymentHelper.exe ExcelFile Environment InputFile OutputFile
+`DeploymentHelper.exe ExcelFile Environment InputFile OutputFile`
 
 ## Exemple
 
