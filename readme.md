@@ -1,7 +1,7 @@
 # DeploymentHelper
-Replaces strings in your app configuration file(s) with data red from an Excel file.
+Replaces strings in your app configuration file(s) with data read from an Excel file.
 
-It makes deployment of applications easier by avoiding to open and modify (often complex) configuration files.
+It makes deployment of applications easier by avoiding the modification of multiple (and often complex) configuration files.
 
 ## Usage
 DeploymentHelper.exe ExcelFile Environment InputFile OutputFile
