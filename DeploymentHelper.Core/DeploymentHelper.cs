@@ -31,7 +31,7 @@ namespace DeploymentHelper.Core
             // Make sure the environment exists
             if (!Excel.GetColumnNames(sheetName).Contains(environment))
             {
-                Console.WriteLine("[ERROR] Environment \"{0}\" could not be found in the Excel file");
+                Console.WriteLine("[ERROR] Environment \"{0}\" could not be found in the Excel file", environment);
                 return;
             }
 
@@ -60,11 +60,18 @@ namespace DeploymentHelper.Core
             Match matchResult = RegexObj.Match(fileContent);
             while (matchResult.Success)
             {
-                fileContent = fileContent.Replace(matchResult.Value, string.Empty);
-                Console.WriteLine("[WARNING] Key \"{0}\" defined in input file not found in Excel file. Replaced by empty string", matchResult.Groups[1].Value);
+                // Leave alone the few {0}, {1}... 
+                // Ex: <webControls clientScriptsLocation="/aspnet_client/{0}/{1}/"/>
+                if (matchResult.Groups[1].Value.Length != 1)
+                {
+                    fileContent = fileContent.Replace(matchResult.Value, string.Empty);
+                    Console.WriteLine(
+                        "[WARNING] Key \"{0}\" defined in input file not found in Excel file. Replaced by empty string",
+                        matchResult.Groups[1].Value);
+                }
                 matchResult = matchResult.NextMatch();
             }
-
+           
             // Save output file
             File.WriteAllText(outFilePath, fileContent);
         }

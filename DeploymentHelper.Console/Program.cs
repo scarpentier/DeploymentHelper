@@ -10,10 +10,12 @@ namespace DeploymentHelper.Console
     {
         static void Main(string[] args)
         {
-            if (args.Length != 3 && args.Length != 4)
+            if (args.Length != 4)
             {
-                System.Console.WriteLine("DeploymentHelper. "); // TODO: Add a description
+                System.Console.WriteLine();
+                System.Console.WriteLine("DeploymentHelper. Replaces strings in your app configuration file(s) with data read from an Excel file.");
                 System.Console.WriteLine("Usage: DeploymentHelper.exe ExcelFile Environment InputFile OutputFile");
+                System.Console.WriteLine();
                 return;
             }
 
