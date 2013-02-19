@@ -27,7 +27,7 @@ namespace DeploymentHelper.Tests
             // Test output file
             var fileContent = File.ReadAllText(OutputFile);
 
-            Assert.IsFalse(fileContent.Contains("{Pi.Server}"));
+            Assert.IsFalse(fileContent.Contains("{{Pi.Server}}"));
             Assert.IsTrue(fileContent.Contains("Data Source=pidev;"));
             Assert.IsTrue(fileContent.Contains("value=\"http://\""));
         }
