@@ -9,7 +9,7 @@ namespace DeploymentHelper.Core
 {
     public class DeploymentHelper
     {
-        private static readonly Regex RegexObj = new Regex(@"\{([^{}]*)\}");
+        private static readonly Regex RegexObj = new Regex(@"\{\{([^{}]*)\}\}");
 
         public ExcelQueryFactory Excel { get; private set; }
 
@@ -54,21 +54,17 @@ namespace DeploymentHelper.Core
             var fileContent = File.ReadAllText(inFilePath);
 
             // Replace the content
-            fileContent = this.Dictionary.Aggregate(fileContent, (current, kvpair) => current.Replace("{" + kvpair.Key + "}", kvpair.Value));
+            fileContent = this.Dictionary.Aggregate(fileContent, (current, kvpair) => current.Replace("{{" + kvpair.Key + "}}", kvpair.Value));
 
             // Make sure no vars are left
             Match matchResult = RegexObj.Match(fileContent);
             while (matchResult.Success)
             {
-                // Leave alone the few {0}, {1}... 
-                // Ex: <webControls clientScriptsLocation="/aspnet_client/{0}/{1}/"/>
-                if (matchResult.Groups[1].Value.Length != 1)
-                {
-                    fileContent = fileContent.Replace(matchResult.Value, string.Empty);
-                    Console.WriteLine(
-                        "[WARNING] Key \"{0}\" defined in input file not found in Excel file. Replaced by empty string",
-                        matchResult.Groups[1].Value);
-                }
+                fileContent = fileContent.Replace(matchResult.Value, string.Empty);
+                Console.WriteLine(
+                    "[WARNING] Key \"{0}\" defined in input file not found in Excel file. Replaced by empty string",
+                    matchResult.Groups[1].Value);
+                
                 matchResult = matchResult.NextMatch();
             }
            
