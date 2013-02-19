@@ -48,12 +48,12 @@ namespace DeploymentHelper.Core
             }
         }
 
-        public void ParseFile(string inFilePath, string outFilePath)
+        public bool ParseFile(string inFilePath, string outFilePath)
         {
             if (!Dictionary.Any())
             {
                 Console.WriteLine("[WARNING] Dictionnary is empty. File not processed");
-                return;
+                return false;
             }
 
             // Open file
@@ -76,6 +76,8 @@ namespace DeploymentHelper.Core
            
             // Save output file
             File.WriteAllText(outFilePath, fileContent);
+
+            return true;
         }
     }
 }
