@@ -50,6 +50,12 @@ namespace DeploymentHelper.Core
 
         public void ParseFile(string inFilePath, string outFilePath)
         {
+            if (!Dictionary.Any())
+            {
+                Console.WriteLine("[WARNING] Dictionnary is empty. File not processed");
+                return;
+            }
+
             // Open file
             var fileContent = File.ReadAllText(inFilePath);
 
