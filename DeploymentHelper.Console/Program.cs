@@ -30,9 +30,18 @@ namespace DeploymentHelper.Console
 
             // Arg 4 is the output file
             var outputFile = args[3];
-            
-            var deploy = new Core.DeploymentHelper(excelFile, environment);
-            deploy.ParseFile(inputFile, outputFile);
+
+            try
+            {
+                var deploy = new Core.DeploymentHelper(excelFile, environment);
+                deploy.ParseFile(inputFile, outputFile);
+            }
+            catch (InvalidOperationException ex)
+            {
+                if (!ex.Message.Contains("Microsoft.ACE.OLEDB")) throw;
+
+                System.Console.WriteLine("The Microsoft Database Engine is missing from this machine. You can download it from the Microsoft Download Center: http://www.microsoft.com/download/details.aspx?id=13255");
+            }
         }
     }
 }
